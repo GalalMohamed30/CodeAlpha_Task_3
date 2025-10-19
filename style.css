@@ -1,6 +1,4 @@
-/* ===============================
-   🧱 RESET & BASE STYLES
-================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,9 +12,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ===============================
-   🦸 HERO SECTION
-================================= */
+
 .hero {
     position: relative;
     min-height: 100vh;
@@ -27,7 +23,7 @@ body {
     overflow: hidden;
 }
 
-/* === Background Grid === */
+
 .grid-bg::before {
     content: "";
     position: absolute;
@@ -50,7 +46,7 @@ body {
     }
 }
 
-/* === Floating Icons === */
+
 .floating-icons .icon {
     position: absolute;
     font-size: 2.5rem;
@@ -70,7 +66,7 @@ body {
     }
 }
 
-/* === Hero Content === */
+
 .hero-content {
     position: relative;
     z-index: 2;
@@ -78,9 +74,7 @@ body {
     padding: 0 1rem;
 }
 
-/* ===============================
-   ✨ NAME SECTION
-================================= */
+
 .name-section {
     position: relative;
     display: inline-block;
@@ -121,9 +115,7 @@ body {
     }
 }
 
-/* ===============================
-   🧭 ROLE / DESCRIPTION
-================================= */
+
 .role {
     display: flex;
     align-items: center;
@@ -151,9 +143,7 @@ body {
     max-width: 600px;
 }
 
-/* ===============================
-   🧩 TECH STACK
-================================= */
+
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -176,9 +166,7 @@ body {
     border-color: rgba(59, 130, 246, 0.6);
 }
 
-/* ===============================
-   🧨 BUTTONS
-================================= */
+
 .buttons {
     display: flex;
     flex-direction: row;
@@ -187,15 +175,15 @@ body {
     margin-top: 2rem;
     width: 100%;
     align-items: center;
-    /* يخلي الأزرار في النص */
+  
 }
 
 .buttons a {
     text-decoration: none;
     width: 100%;
-    /* الزر ياخد نص الشاشة */
+    
     text-align: center;
-    /* يخلي النص في النص */
+   
 }
 
 @media (min-width: 640px) {
@@ -206,7 +194,7 @@ body {
 
     .buttons a {
         width: auto;
-        /* يرجع الحجم الطبيعي على الشاشات الكبيرة */
+      
     }
 }
 
@@ -264,9 +252,7 @@ body {
     background: #2d333b;
 }
 
-/* ===============================
-   🌐 SOCIAL ICONS
-================================= */
+
 .socials {
     display: flex;
     justify-content: center;
@@ -285,9 +271,7 @@ body {
     filter: drop-shadow(0 0 6px #60a5fa);
 }
 
-/* ===============================
-   🧭 SCROLL INDICATOR
-================================= */
+
 .scroll {
     position: absolute;
     bottom: -8rem;
@@ -316,9 +300,7 @@ body {
     }
 }
 
-/* ===============================
-   💻 SKILLS SECTION
-================================= */
+
 .skills-section {
     position: relative;
     width: 80%;
@@ -346,7 +328,7 @@ body {
     }
 }
 
-/* Title */
+
 .title {
     text-align: center;
     font-size: 2rem;
@@ -354,7 +336,7 @@ body {
     margin-bottom: 3rem;
 }
 
-/* Slider / Responsive Grid */
+
 .skills-slider {
     display: flex;
     flex-wrap: wrap;
@@ -376,7 +358,7 @@ body {
     transform: scale(1.03);
 }
 
-/* Responsive */
+
 @media (max-width: 1024px) {
     .skill-card {
         flex: 1 1 45%;
@@ -389,7 +371,7 @@ body {
     }
 }
 
-/* Card Header */
+
 .card-header {
     display: flex;
     align-items: center;
@@ -406,7 +388,7 @@ body {
     font-weight: 700;
 }
 
-/* Skill Items */
+
 .skill-item {
     margin-bottom: 1rem;
 }
