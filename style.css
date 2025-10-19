@@ -1,0 +1,452 @@
+/* ===============================
+   🧱 RESET & BASE STYLES
+================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #0d1117;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* ===============================
+   🦸 HERO SECTION
+================================= */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* === Background Grid === */
+.grid-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.15;
+    animation: pulseGrid 4s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes pulseGrid {
+    0% {
+        opacity: 0.1;
+    }
+
+    100% {
+        opacity: 0.25;
+    }
+}
+
+/* === Floating Icons === */
+.floating-icons .icon {
+    position: absolute;
+    font-size: 2.5rem;
+    opacity: 0.5;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* === Hero Content === */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+/* ===============================
+   ✨ NAME SECTION
+================================= */
+.name-section {
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
+}
+
+.glow-bg {
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+    border-radius: 1rem;
+    filter: blur(20px);
+    opacity: 0.75;
+    z-index: 0;
+}
+
+.name-text {
+    position: relative;
+    font-size: 100px;
+    color: transparent;
+    background: linear-gradient(to right, #ffffff, #d1d5db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: -1px;
+    z-index: 1;
+    animation: splitFade 2.2s ease-out forwards;
+}
+
+@keyframes splitFade {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   🧭 ROLE / DESCRIPTION
+================================= */
+.role {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.role h2 {
+    font-weight: 300;
+    color: #60a5fa;
+}
+
+.line {
+    width: 50px;
+    height: 1px;
+    background: #3b82f6;
+}
+
+.description {
+    color: #9ca3af;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 1.5rem auto;
+    max-width: 600px;
+}
+
+/* ===============================
+   🧩 TECH STACK
+================================= */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.tech-stack span {
+    background: #1a1f2b;
+    border: 1px solid #2d333b;
+    border-radius: 9999px;
+    padding: 6px 14px;
+    color: #d1d5db;
+    font-size: 0.9rem;
+    transition: border 0.3s;
+}
+
+.tech-stack span:hover {
+    border-color: rgba(59, 130, 246, 0.6);
+}
+
+/* ===============================
+   🧨 BUTTONS
+================================= */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    align-items: center;
+    /* يخلي الأزرار في النص */
+}
+
+.buttons a {
+    text-decoration: none;
+    width: 100%;
+    /* الزر ياخد نص الشاشة */
+    text-align: center;
+    /* يخلي النص في النص */
+}
+
+@media (min-width: 640px) {
+    .buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .buttons a {
+        width: auto;
+        /* يرجع الحجم الطبيعي على الشاشات الكبيرة */
+    }
+}
+
+.btn-gradient {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 2rem;
+    color: white;
+    font-weight: 500;
+    border-radius: 9999px;
+    background: #161b22;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-gradient::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0.7;
+    filter: blur(8px);
+    transition: opacity 0.3s;
+}
+
+.btn-gradient:hover::before {
+    opacity: 1;
+}
+
+.icon-arrow {
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+.btn-gradient:hover .icon-arrow {
+    transform: translateX(5px);
+}
+
+.btn-outline {
+    padding: 0.9rem 2rem;
+    border: 1px solid #2d333b;
+    background: #21262d;
+    border-radius: 9999px;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    border-color: #4b5563;
+    background: #2d333b;
+}
+
+/* ===============================
+   🌐 SOCIAL ICONS
+================================= */
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.socials img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.socials a:hover img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 6px #60a5fa);
+}
+
+/* ===============================
+   🧭 SCROLL INDICATOR
+================================= */
+.scroll {
+    position: absolute;
+    bottom: -8rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    animation: bounce 2s infinite;
+}
+
+.scroll span {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* ===============================
+   💻 SKILLS SECTION
+================================= */
+.skills-section {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.dot-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#5227ff 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.07;
+    animation: moveDots 10s linear infinite;
+}
+
+@keyframes moveDots {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 40px 40px;
+    }
+}
+
+/* Title */
+.title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+/* Slider / Responsive Grid */
+.skills-slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding-bottom: 1rem;
+}
+
+.skill-card {
+    flex: 1 1 300px;
+    background: #21262d;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.4s ease;
+    min-width: 260px;
+}
+
+.skill-card:hover {
+    transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .skill-card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .skill-card {
+        flex: 1 1 100%;
+    }
+}
+
+/* Card Header */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-header .icon {
+    font-size: 1.8rem;
+}
+
+.card-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* Skill Items */
+.skill-item {
+    margin-bottom: 1rem;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.label span:first-child {
+    color: #fff;
+}
+
+.label span:last-child {
+    color: #9ca3af;
+}
+
+.bar {
+    height: 8px;
+    background: #30363d;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    border-radius: 9999px;
+    animation: expand 1s ease forwards;
+    transform-origin: left;
+}
+
+@keyframes expand {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--width);
+    }
+}
